@@ -57,6 +57,8 @@ import { dni, password } from "./constants.js";
 
     const data = await response.json();
 
+    fs.mkdirSync("data", { recursive: true });
+
     fs.writeFileSync(
       "./data/usuarios-firma.json",
       JSON.stringify(data, null, 2),
